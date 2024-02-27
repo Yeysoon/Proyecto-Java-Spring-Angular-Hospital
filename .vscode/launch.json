@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-DemoProyectoPrograApplication<demo-proyecto-progra>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.umg.proyecto.demoproyectoprogra.DemoProyectoPrograApplication",
+            "projectName": "demo-proyecto-progra",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}
