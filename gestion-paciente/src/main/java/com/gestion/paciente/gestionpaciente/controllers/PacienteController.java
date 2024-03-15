@@ -39,6 +39,8 @@ public class PacienteController {
         paciente.setSeguro(pacienteJson.getSeguro());
         paciente.setNumeroIdentificacion(pacienteJson.getNumeroIdentificacion());
         
+
+        System.out.println("Valor a persistir"+paciente.toString());
         return servicioPaciente.registrarPaciente(paciente);
 
     }
