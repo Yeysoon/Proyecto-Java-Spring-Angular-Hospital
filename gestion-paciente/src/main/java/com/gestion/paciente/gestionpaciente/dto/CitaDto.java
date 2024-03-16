@@ -13,6 +13,4 @@ public class CitaDto {
     private int horaCita;
     private String motivoCita;
 
-
-
 }
