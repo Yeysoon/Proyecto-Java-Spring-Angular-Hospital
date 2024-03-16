@@ -1,6 +1,7 @@
 package com.gestion.paciente.gestionpaciente.entidades;
 
 import java.time.LocalDate;
+import java.time.LocalTime;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -25,9 +26,11 @@ public class Citas {
     @Column(name = "id_cita")
     private Long ididCitas;
 
+    @Column(name = "fecha_cita")
     private LocalDate fechaCita;
 
-    private int horaCita;
+    @Column(name = "hora_cita")
+    private LocalTime horaCita;
 
     @Column (name = "motivo_cita")
     private String motivoCita;
