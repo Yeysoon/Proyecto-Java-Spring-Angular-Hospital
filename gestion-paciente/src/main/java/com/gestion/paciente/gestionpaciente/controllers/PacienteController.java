@@ -40,7 +40,7 @@ public class PacienteController {
         paciente.setNumeroIdentificacion(pacienteJson.getNumeroIdentificacion());
         
 
-        System.out.println("Valor a persistir"+paciente.toString());
+        System.out.println("Valor a persistir claro"+paciente.toString());
         return servicioPaciente.registrarPaciente(paciente);
 
     }
