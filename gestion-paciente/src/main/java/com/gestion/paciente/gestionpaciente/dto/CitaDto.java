@@ -10,6 +10,7 @@ import lombok.Data;
 @AllArgsConstructor
 public class CitaDto {
 
+    private long idCitas;
     private LocalDate fechaCita;
     private LocalTime horaCita;
     private String motivoCita;

@@ -24,7 +24,7 @@ public class Citas {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_cita")
-    private Long ididCitas;
+    private Long idCitas;
 
     @Column(name = "fecha_cita")
     private LocalDate fechaCita;
