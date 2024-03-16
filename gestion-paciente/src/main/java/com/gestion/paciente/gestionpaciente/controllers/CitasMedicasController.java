@@ -32,9 +32,9 @@ public class CitasMedicasController {
         cita.setFechaCita(citaJson.getFechaCita());
         cita.setHoraCita(citaJson.getHoraCita());
         cita.setMotivoCita(citaJson.getMotivoCita());
-        return cita;
 
-        
+        System.out.println("Valor a persistir"+cita.toString());
+        return servicioCita.registrarPaciente(cita);
     }
 
 }
