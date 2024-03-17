@@ -9,8 +9,6 @@ import com.gestion.paciente.gestionpaciente.dto.CitaDto;
 import com.gestion.paciente.gestionpaciente.entidades.Citas;
 import com.gestion.paciente.gestionpaciente.services.CitaServicio;
 
-
-
 @RestController
 @RequestMapping("/api")
 public class CitasMedicasController {
