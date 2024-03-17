@@ -22,7 +22,7 @@ public class TipoEnfermedadesControler {
     private TiposEnfermedadesServicio servicioEnfermedades;
 
     @GetMapping ("/listarEnfermedades")
-    public List<TiposEnfermedades> consultarPaciente(){
+    public List<TiposEnfermedades> colsultarTiposEnfermedades(){
         return servicioEnfermedades.consultarTipoEnfermedades();
     }
 
@@ -31,8 +31,12 @@ public class TipoEnfermedadesControler {
 
         TiposEnfermedades enfermedad = new TiposEnfermedades();
 
-        //paciente.setNombrePaciente(pacienteJson.getNombrePaciente());
-        
+        enfermedad.setNombreenfermedad(enfermedadJson.getNombreenfermedad());
+        enfermedad.setTipoenfermedad(enfermedadJson.getTipoenfermedad());
+        enfermedad.setFactor(enfermedadJson.getFactor());
+        enfermedad.setSintomas(enfermedadJson.getSintomas());
+        enfermedad.setEstado(enfermedadJson.getEstado());
+        enfermedad.setTratamiento(enfermedadJson.getTratamiento());        
         
 
         System.out.println("Valor a persistir claro"+enfermedad.toString());
