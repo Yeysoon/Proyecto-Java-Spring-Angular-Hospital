@@ -15,7 +15,6 @@ import com.gestion.paciente.gestionpaciente.services.CitaServicio;
 @RequestMapping("/api")
 public class CitasMedicasController {
 
-    
     @Autowired
     private CitaServicio servicioCita;
 
