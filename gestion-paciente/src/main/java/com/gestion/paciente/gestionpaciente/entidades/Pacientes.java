@@ -47,7 +47,7 @@ public class Pacientes {
     
     @Column (name = "fecha_alta")
     private LocalDate fechaAlta;
-    private String Razon;
+    private String razon;
 
 
 }

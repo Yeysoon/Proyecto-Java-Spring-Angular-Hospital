@@ -38,6 +38,13 @@ public class PacienteController {
         paciente.setTelefono(pacienteJson.getTelefono());
         paciente.setSeguro(pacienteJson.getSeguro());
         paciente.setNumeroIdentificacion(pacienteJson.getNumeroIdentificacion());
+        paciente.setPeso(pacienteJson.getPeso());
+        paciente.setEstatura(pacienteJson.getEstatura());
+        paciente.setMedicamento(pacienteJson.getMedicamento());
+        paciente.setAlergias(pacienteJson.getAlergias());
+        paciente.setFechaAlta(pacienteJson.getFechaAlta());
+        paciente.setRazon(pacienteJson.getRazon());
+    
         
 
         System.out.println("Valor a persistir claro"+paciente.toString());

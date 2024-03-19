@@ -18,4 +18,11 @@ public class PacienteDto {
     private Integer telefono;
     private Boolean seguro;
     private Integer numeroIdentificacion;
+    private float peso;
+    private float estatura;
+    private String medicamento;
+    private String alergias;
+    private LocalDate fechaAlta;
+    private String razon;
+    
 }
