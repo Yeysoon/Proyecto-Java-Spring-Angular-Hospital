@@ -32,7 +32,7 @@ public class PacienteController {
 
         paciente.setNombrePaciente(pacienteJson.getNombrePaciente());
         paciente.setEdad(pacienteJson.getEdad());
-        paciente.setFechaNacimiento(pacienteJson.getFecha());
+        paciente.setFechaNacimiento(pacienteJson.getFechaNacimiento());
         paciente.setGenero(pacienteJson.getGenero());
         paciente.setDireccion(pacienteJson.getDireccion());
         paciente.setTelefono(pacienteJson.getTelefono());
