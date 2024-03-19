@@ -40,5 +40,14 @@ public class Pacientes {
     @Column (name = "numero_identificacion")
     private Integer numeroIdentificacion;
 
+    private float peso;
+    private float estatura;
+    private String medicamento;
+    private String alergias;
+    
+    @Column (name = "fecha_alta")
+    private LocalDate fechaAlta;
+    private String Razon;
+
 
 }
