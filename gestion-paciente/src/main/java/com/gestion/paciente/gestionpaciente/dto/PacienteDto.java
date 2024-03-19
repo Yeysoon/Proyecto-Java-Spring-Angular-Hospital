@@ -17,7 +17,7 @@ public class PacienteDto {
     private String direccion;
     private Integer telefono;
     private Boolean seguro;
-    private Integer numeroIdentificacion;
+    private Long numeroIdentificacion;
     private float peso;
     private float estatura;
     private String medicamento;

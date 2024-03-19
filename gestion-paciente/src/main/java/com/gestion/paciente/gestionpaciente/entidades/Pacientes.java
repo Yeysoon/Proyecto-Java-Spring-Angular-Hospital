@@ -38,7 +38,7 @@ public class Pacientes {
     private Boolean seguro;
 
     @Column (name = "numero_identificacion")
-    private Integer numeroIdentificacion;
+    private Long numeroIdentificacion;
 
     private float peso;
     private float estatura;
