@@ -5,10 +5,10 @@ import lombok.Data;
 
 @Data
 @AllArgsConstructor
-
 public class MedicoDto {
 
     private Long idMedicos;
+    private String nombreMedico;
     private String especialidad;
     private String licenciaMedica;
     private String cargo;

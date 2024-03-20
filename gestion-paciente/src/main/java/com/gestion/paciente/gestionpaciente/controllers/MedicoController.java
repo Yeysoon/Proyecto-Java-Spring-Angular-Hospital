@@ -33,6 +33,7 @@ public class MedicoController {
     public Medicos registrarMedico(@RequestBody MedicoDto medicoJson){
         Medicos medicos = new Medicos();
 
+        medicos.setNombreMedico(medicoJson.getNombreMedico());
         medicos.setEspecialidad(medicoJson.getEspecialidad());
         medicos.setLicenciaMedica(medicoJson.getLicenciaMedica());
         medicos.setCargo(medicoJson.getCargo());
