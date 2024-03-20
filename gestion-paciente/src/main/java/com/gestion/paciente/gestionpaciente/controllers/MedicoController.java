@@ -29,7 +29,7 @@ public class MedicoController {
     }
 
 
-    @PostMapping ("/registroMedico")
+    @PostMapping ("/registroMedicos")
     public Medicos registrarMedico(@RequestBody MedicoDto medicoJson){
         Medicos medicos = new Medicos();
 
