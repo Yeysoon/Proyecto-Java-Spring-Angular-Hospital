@@ -8,12 +8,11 @@ import org.springframework.stereotype.Service;
 import com.gestion.paciente.gestionpaciente.entidades.Medicos;
 import com.gestion.paciente.gestionpaciente.repositorio.MedicoRepositorio;
 
+
 @Service
 public class MedicoServicio {
     @Autowired
     private MedicoRepositorio medicoRepositorio;
-
-
     
     /**Consultar todos los medicos
      * @return

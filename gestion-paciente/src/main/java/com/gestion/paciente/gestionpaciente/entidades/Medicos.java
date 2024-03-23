@@ -1,5 +1,7 @@
 package com.gestion.paciente.gestionpaciente.entidades;
 
+import java.io.Serializable;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -16,7 +18,7 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Medicos {
+public class Medicos implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
