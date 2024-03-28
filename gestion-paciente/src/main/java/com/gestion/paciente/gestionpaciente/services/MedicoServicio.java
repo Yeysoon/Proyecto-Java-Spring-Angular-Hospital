@@ -8,6 +8,8 @@ import org.springframework.stereotype.Service;
 import com.gestion.paciente.gestionpaciente.entidades.Medicos;
 import com.gestion.paciente.gestionpaciente.repositorio.MedicoRepositorio;
 
+import jakarta.transaction.Transactional;
+
 
 @Service
 public class MedicoServicio {
@@ -31,5 +33,38 @@ public class MedicoServicio {
     }
 
     
+    /**
+     * Buscar por ID
+     * @param 
+     * @return
+     */
+    @SuppressWarnings("null")
+    @Transactional
+    public Medicos findById(Long id){
+        return medicoRepositorio.findById(id).orElse(null);
+    };
+
+    
+    /**
+     * Guardar Medicos
+     * @param medicos
+     * @return
+     */
+    @SuppressWarnings("null")
+    @Transactional
+    public Medicos save(Medicos medicos){
+        return medicoRepositorio.save(medicos);
+    };
+
+    
+    /**
+     * Eliminar Medicos
+     * @param id
+     */
+    @SuppressWarnings("null")
+    @Transactional
+    public void delete(Long id){
+        medicoRepositorio.deleteById(id);
+    };
 
 }
