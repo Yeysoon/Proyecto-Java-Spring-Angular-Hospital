@@ -44,4 +44,9 @@ public class MedicoController {
 
     }
 
+    @GetMapping ("/medicos/{id}")
+    public Medicos buscarPorId(){
+
+    }
+
 }
