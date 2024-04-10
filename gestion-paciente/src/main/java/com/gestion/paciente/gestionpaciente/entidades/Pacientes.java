@@ -13,7 +13,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Table(name="formulario_paciente")
+@Table(name="paciente")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -25,30 +25,24 @@ public class Pacientes {
     @Column(name = "id_paciente")
     private Long idPacientes;
 
+    @Column (name = "numero_identificacion")
+    private Long numeroIdentificacion;
+
     @Column (name = "nombre_paciente")
     private String nombrePaciente;
 
     private Integer edad;
-
-    @Column (name = "fecha_nacimiento")
-    private LocalDate fechaNacimiento;
-    private char sexo;
     private String direccion;
     private Integer telefono;
-    private Boolean seguro;
-
-    @Column (name = "numero_identificacion")
-    private Long numeroIdentificacion;
-
-    private float peso;
-    private float estatura;
-    private String medicamento;
-    private String alergias;
     
-    @Column (name = "fecha_alta")
-    private LocalDate fechaAlta;
-    private String razon;
+    @Column (name = "correo_electronico")
+    private String correoElectronico;
 
-    // cometario 2.0
+    private char sexo;
 
+    @Column (name = "contacto_emergencia")
+    private String contactoEmergencia;
+
+    @Column (name = "telefono_emergencia")
+    private String telefonoEmergencia;
 }

@@ -27,7 +27,7 @@ public class MedicoServicio {
      * @param medicos
      * @return
      */
-    @SuppressWarnings("null")
+    
     public Medicos registrarMedico(Medicos medicos){
         return medicoRepositorio.save(medicos);
     }
@@ -38,7 +38,7 @@ public class MedicoServicio {
      * @param 
      * @return
      */
-    @SuppressWarnings("null")
+    
     @Transactional
     public Medicos findById(Long id){
         return medicoRepositorio.findById(id).orElse(null);
@@ -50,7 +50,7 @@ public class MedicoServicio {
      * @param medicos
      * @return
      */
-    @SuppressWarnings("null")
+   
     @Transactional
     public Medicos save(Medicos medicos){
         return medicoRepositorio.save(medicos);
@@ -61,7 +61,7 @@ public class MedicoServicio {
      * Eliminar Medicos
      * @param id
      */
-    @SuppressWarnings("null")
+    
     @Transactional
     public void delete(Long id){
         medicoRepositorio.deleteById(id);

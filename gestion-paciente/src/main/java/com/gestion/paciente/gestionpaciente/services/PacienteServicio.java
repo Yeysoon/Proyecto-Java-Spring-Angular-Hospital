@@ -27,7 +27,7 @@ public class PacienteServicio {
      * @param paciente
      * @return
      */
-    @SuppressWarnings("null")
+    
     public Pacientes registrarPaciente(Pacientes paciente){
         return pacienteRepositorio.save(paciente);
     }

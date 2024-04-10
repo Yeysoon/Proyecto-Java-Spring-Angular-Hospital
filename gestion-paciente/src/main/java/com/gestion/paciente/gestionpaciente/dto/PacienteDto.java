@@ -1,7 +1,5 @@
 package com.gestion.paciente.gestionpaciente.dto;
 
-import java.time.LocalDate;
-
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
@@ -10,19 +8,14 @@ import lombok.Data;
 public class PacienteDto {
 
     private Long idPacientes;
+    private Long numeroIdentificacion;
     private String nombrePaciente;
     private Integer edad;
-    private LocalDate fechaNacimiento;
-    private char sexo;
     private String direccion;
     private Integer telefono;
-    private Boolean seguro;
-    private Long numeroIdentificacion;
-    private float peso;
-    private float estatura;
-    private String medicamento;
-    private String alergias;
-    private LocalDate fechaAlta;
-    private String razon;
+    private String correoElectronico;
+    private char sexo;
+    private String contactoEmergencia;
+    private String telefonoEmergencia;
     
 }

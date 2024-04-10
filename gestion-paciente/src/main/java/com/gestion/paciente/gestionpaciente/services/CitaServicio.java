@@ -29,7 +29,7 @@ public class CitaServicio {
      * @param cita
      * @return
      */
-    @SuppressWarnings("null")
+    
     public Citas registrarPaciente(Citas cita){
         return citaRepositorio.save(cita);
     }
