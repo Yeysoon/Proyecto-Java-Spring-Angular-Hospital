@@ -13,7 +13,7 @@ public class PacienteDto {
     private String nombrePaciente;
     private Integer edad;
     private LocalDate fechaNacimiento;
-    private String genero;
+    private char sexo;
     private String direccion;
     private Integer telefono;
     private Boolean seguro;

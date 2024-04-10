@@ -32,7 +32,7 @@ public class Pacientes {
 
     @Column (name = "fecha_nacimiento")
     private LocalDate fechaNacimiento;
-    private String genero;
+    private char sexo;
     private String direccion;
     private Integer telefono;
     private Boolean seguro;
