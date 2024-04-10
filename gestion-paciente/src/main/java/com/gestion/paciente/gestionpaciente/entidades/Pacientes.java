@@ -1,7 +1,4 @@
 package com.gestion.paciente.gestionpaciente.entidades;
-
-import java.time.LocalDate;
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -44,5 +41,5 @@ public class Pacientes {
     private String contactoEmergencia;
 
     @Column (name = "telefono_emergencia")
-    private String telefonoEmergencia;
+    private Integer telefonoEmergencia;
 }

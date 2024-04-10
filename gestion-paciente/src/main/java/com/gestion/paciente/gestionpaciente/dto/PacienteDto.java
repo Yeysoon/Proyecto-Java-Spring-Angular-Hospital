@@ -16,6 +16,6 @@ public class PacienteDto {
     private String correoElectronico;
     private char sexo;
     private String contactoEmergencia;
-    private String telefonoEmergencia;
+    private Integer telefonoEmergencia;
     
 }
