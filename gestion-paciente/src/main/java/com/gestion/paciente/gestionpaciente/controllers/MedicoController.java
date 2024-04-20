@@ -20,7 +20,6 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.gestion.paciente.gestionpaciente.dto.MedicoDto;
-
 import com.gestion.paciente.gestionpaciente.entidades.Medicos;
 import com.gestion.paciente.gestionpaciente.services.MedicoServicio;
 
