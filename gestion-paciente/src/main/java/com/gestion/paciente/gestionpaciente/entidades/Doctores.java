@@ -29,7 +29,7 @@ public class Doctores {
 
     @ManyToOne
     @JoinColumn (name = "id_especialidad")
-    private Especialidades iEspecialidades;
+    private Especialidades idEspecialidades;
 
     @Column (name = "licencia_medica")
     private String licenciaMedica;

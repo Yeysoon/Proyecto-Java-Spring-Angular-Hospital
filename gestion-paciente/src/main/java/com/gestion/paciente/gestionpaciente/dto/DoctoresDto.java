@@ -11,7 +11,7 @@ public class DoctoresDto {
 
     private Long idDoctores;
     private String nombreMedico;
-    private Long iEspecialidades;
+    private Long idEspecialidades;
     private String licenciaMedica;
     private String cargo;
     private String turno;
