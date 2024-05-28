@@ -6,5 +6,5 @@ import com.gestion.paciente.gestionpaciente.entidades.Doctores;
 
 public interface DoctoresRepositorio extends JpaRepository<Doctores, Long> {
 
-    List<Doctores> findByName(String nombreMedico);
+    List<Doctores> findByNombreMedico(String nombreMedico);
 }

@@ -9,7 +9,6 @@ import org.springframework.stereotype.Service;
 import com.gestion.paciente.gestionpaciente.repositorio.DoctoresRepositorio;
 import com.gestion.paciente.gestionpaciente.repositorio.EspecialidadRespositorio;
 import com.gestion.paciente.gestionpaciente.dto.DoctoresDto;
-import com.gestion.paciente.gestionpaciente.dto.MedicoDto;
 import com.gestion.paciente.gestionpaciente.entidades.Doctores;
 import com.gestion.paciente.gestionpaciente.entidades.Especialidades;
 
@@ -90,7 +89,7 @@ public class DoctoresServicio {
 
     //Listar por nombre de medios
     public List<Doctores> findDoctoresByName(String nombreMedico) {
-        return doctoresRepositorio.findByName(nombreMedico);
+        return doctoresRepositorio.findByNombreMedico(nombreMedico);
     }
 
 }
