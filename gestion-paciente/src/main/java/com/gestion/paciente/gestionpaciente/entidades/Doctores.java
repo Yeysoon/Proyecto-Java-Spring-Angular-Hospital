@@ -6,36 +6,34 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
-import jakarta.persistence.OneToMany;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-
 @Entity
 @Table(name="medicos")
 @Data
-@AllArgsConstructor
 @NoArgsConstructor
-
+@AllArgsConstructor
 public class Doctores {
 
-
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_medico")
-    private Long idMedicos;
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
+    @Column(name="id_medico")
+    private Long idDoctores;
 
-    @Column(name = "nombre_medico")
+    @Column (name = "nombre_medico")
     private String nombreMedico;
 
-    @JoinColumn(name = "id_especialidad")
-    @OneToMany    
-    private Integer id_especialidad;    
+    @ManyToOne
+    @JoinColumn (name = "id_especialidad")
+    private Especialidades iEspecialidades;
 
     @Column (name = "licencia_medica")
     private String licenciaMedica;
+
     private String cargo;
     private String turno;
 }
