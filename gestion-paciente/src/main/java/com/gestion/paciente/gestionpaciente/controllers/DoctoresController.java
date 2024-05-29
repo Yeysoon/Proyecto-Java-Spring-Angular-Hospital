@@ -36,8 +36,8 @@ public class DoctoresController {
 
 
      @GetMapping("/doctores")
-     public ResponseEntity<List<Doctores>> getList(){
-        return ResponseEntity.ok(doctoresServicio.getAll());
+     public List<Doctores> getList(){
+        return doctoresServicio.getAll();
      }
 
 
