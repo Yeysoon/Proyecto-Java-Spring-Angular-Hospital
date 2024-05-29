@@ -36,14 +36,16 @@ private Time horaCita;
 @Column(name = "motivo_cita")
 private String motivoCita;
 
-@ManyToOne
-@JoinColumn (name = "id_paciente")
-private Pacientes idPacientes;
-
 
 @ManyToOne
 @JoinColumn (name = "id_medico")
-private Medicos idDoctores;
+private Doctores idDoctor;
+
+@ManyToOne
+@JoinColumn (name = "id_paciente")
+private Pacientes idPaciente;
+
+
 
 
 
