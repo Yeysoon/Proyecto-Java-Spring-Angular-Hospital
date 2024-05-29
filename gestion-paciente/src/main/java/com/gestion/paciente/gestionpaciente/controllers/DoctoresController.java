@@ -24,7 +24,7 @@ import com.gestion.paciente.gestionpaciente.services.DoctoresServicio;
 
 @CrossOrigin(origins = {"http://localhost:4200"})
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/Doctores")
 public class DoctoresController {
 
      @Autowired
@@ -55,13 +55,13 @@ public class DoctoresController {
         return ResponseEntity.ok(doctores);
     }
 
-    @PutMapping("/{id}")
+    @PutMapping("/doctores/{idDoctores}")
     public ResponseEntity<Doctores> updateDoctores(@PathVariable Long idDoctores, @RequestBody DoctoresDto doctoresDto) {
         Doctores updatedDoctores = doctoresServicio.updateDoctores(idDoctores, doctoresDto);
         return ResponseEntity.ok(updatedDoctores);
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/doctores/{idDoctores}")
     public ResponseEntity<Void> deleteDoctores(@PathVariable Long idDoctores) {
         doctoresServicio.deleteDoctores(idDoctores);
         return ResponseEntity.noContent().build();
