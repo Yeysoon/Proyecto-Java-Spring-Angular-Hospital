@@ -18,34 +18,39 @@ import com.gestion.paciente.gestionpaciente.repositorio.PacienteRepositorio;
 public class CitasServicio {
 
     @Autowired
-
     private final CitasRepositorio citasRepositorio;
     private final DoctoresRepositorio doctoresRepositorio;
     private final PacienteRepositorio pacienteRepositorio;
 
-    public CitasServicio(CitasRepositorio citasRepositorio, DoctoresRepositorio doctoresRepositorio, PacienteRepositorio pacienteRepositorio){
 
+    public CitasServicio(CitasRepositorio citasRepositorio, DoctoresRepositorio doctoresRepositorio, PacienteRepositorio pacienteRepositorio){
 
         this.citasRepositorio = citasRepositorio;
         this.doctoresRepositorio = doctoresRepositorio;
         this.pacienteRepositorio = pacienteRepositorio;
-
     }
 
+    //Listar todas las citas
     public List<Citas> getAll(){
         return citasRepositorio.findAll();
     }
 
+
+    //Buscar por Id citas
     public Optional<Citas> getCitasById(Long idCitas){
 
         return citasRepositorio.findById(idCitas);
     }
 
+
+    //Guardar general citas
     public Citas saveCitas(Citas citas){
 
         return citasRepositorio.save(citas);
     }
 
+
+    //Guardado citas
     public Citas saveCita(CitasDto citasDto){
 
         Doctores doctores = doctoresRepositorio.findById(citasDto.getIdDoctor())
@@ -64,6 +69,8 @@ public class CitasServicio {
          return citasRepositorio.save(citas);
     }
 
+
+    //Actualizar doctores
     public Citas updateCitas(Long idCitas, CitasDto citasDto) {
         Citas existingCitas = citasRepositorio.findById(idCitas)
                 .orElseThrow(() -> new IllegalArgumentException("Cita not found"));
@@ -83,7 +90,7 @@ public class CitasServicio {
         return citasRepositorio.save(existingCitas);
     }
 
-    //
+    //Eliminar citas
     public void deleteCitas(Long idCitas) {
         Citas existingCitas = citasRepositorio.findById(idCitas)
                 .orElseThrow(() -> new IllegalArgumentException("Citas not found"));
@@ -91,7 +98,7 @@ public class CitasServicio {
     }
 
 
-    //
+    //Listar citas por id citas
     public List<Citas> findCitasById(Long idCitas) {
         return citasRepositorio.findByCitas(idCitas);
     }

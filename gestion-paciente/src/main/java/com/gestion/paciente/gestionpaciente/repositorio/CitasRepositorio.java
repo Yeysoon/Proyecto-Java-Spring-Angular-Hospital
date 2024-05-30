@@ -1,5 +1,7 @@
 package com.gestion.paciente.gestionpaciente.repositorio;
+
 import java.util.List;
+
 import org.springframework.data.jpa.repository.JpaRepository;
 import com.gestion.paciente.gestionpaciente.entidades.Citas;
 
