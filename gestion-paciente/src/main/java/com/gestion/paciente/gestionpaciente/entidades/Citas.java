@@ -9,7 +9,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
-import jakarta.persistence.OneToOne;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -36,13 +36,13 @@ private Time horaCita;
 @Column(name = "motivo_cita")
 private String motivoCita;
 
-@OneToOne
+@ManyToOne
 @JoinColumn (name = "id_paciente")
-private Pacientes idPaciente;
+private Pacientes idPacientes;
 
-@OneToOne
+@ManyToOne
 @JoinColumn (name = "id_medico")
-private Doctores idDoctor;
+private Doctores idDoctores;
 
 
 

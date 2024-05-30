@@ -17,7 +17,7 @@ private Long idCita;
 private Date fechaCita;
 private Time horaCita;
 private String motivoCita;
-private Long idPaciente;
-private Long idDoctor;
+private Long idPacientes;
+private Long idDoctores;
 
 }

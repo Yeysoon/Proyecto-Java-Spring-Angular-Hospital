@@ -8,5 +8,6 @@ import com.gestion.paciente.gestionpaciente.entidades.Citas;
 
 public interface CitasRepositorio extends JpaRepository<Citas, Long>{
 
-    List<Citas> findByCitas(Long idCita);
+    List<Citas> findBymotivoCita(String motivoCita);
+
 }

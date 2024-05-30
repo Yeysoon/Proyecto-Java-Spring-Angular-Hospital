@@ -53,18 +53,18 @@ public class CitasServicio {
     //Guardado citas
     public Citas saveCita(CitasDto citasDto){
 
-        Doctores doctores = doctoresRepositorio.findById(citasDto.getIdDoctor())
+        Doctores doctores = doctoresRepositorio.findById(citasDto.getIdDoctores())
         .orElseThrow(() -> new IllegalArgumentException("Especiality not found"));
 
-        Pacientes pacientes = pacienteRepositorio.findById(citasDto.getIdPaciente())
+        Pacientes pacientes = pacienteRepositorio.findById(citasDto.getIdPacientes())
         .orElseThrow(() -> new IllegalArgumentException("Especiality not found"));
         
         Citas citas = new Citas();
          citas.setFechaCita(citasDto.getFechaCita());
          citas.setHoraCita(citasDto.getHoraCita());
          citas.setMotivoCita(citasDto.getMotivoCita());
-         citas.setIdDoctor(doctores);
-         citas.setIdPaciente(pacientes);
+         citas.setIdDoctores(doctores);
+         citas.setIdPacientes(pacientes);
 
          return citasRepositorio.save(citas);
     }
@@ -75,17 +75,17 @@ public class CitasServicio {
         Citas existingCitas = citasRepositorio.findById(idCitas)
                 .orElseThrow(() -> new IllegalArgumentException("Cita not found"));
 
-                Doctores doctores = doctoresRepositorio.findById(citasDto.getIdDoctor())
+                Doctores doctores = doctoresRepositorio.findById(citasDto.getIdDoctores())
                 .orElseThrow(() -> new IllegalArgumentException("Especiality not found"));
         
-                Pacientes pacientes = pacienteRepositorio.findById(citasDto.getIdPaciente())
+                Pacientes pacientes = pacienteRepositorio.findById(citasDto.getIdPacientes())
                 .orElseThrow(() -> new IllegalArgumentException("Especiality not found"));
 
                 existingCitas.setFechaCita(citasDto.getFechaCita());
                 existingCitas.setHoraCita(citasDto.getHoraCita());
                 existingCitas.setMotivoCita(citasDto.getMotivoCita());
-                existingCitas.setIdDoctor(doctores);
-                existingCitas.setIdPaciente(pacientes);
+                existingCitas.setIdDoctores(doctores);
+                existingCitas.setIdPacientes(pacientes);
 
         return citasRepositorio.save(existingCitas);
     }
@@ -99,8 +99,8 @@ public class CitasServicio {
 
 
     //Listar citas por id citas
-    public List<Citas> findCitasById(Long idCitas) {
-        return citasRepositorio.findByCitas(idCitas);
+    public List<Citas> findCitasByMotivo(String motivoCita) {
+        return citasRepositorio.findBymotivoCita(motivoCita);
     }
 
 }
