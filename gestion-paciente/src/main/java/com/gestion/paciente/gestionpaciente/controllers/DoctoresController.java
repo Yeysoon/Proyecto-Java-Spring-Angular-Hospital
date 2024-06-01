@@ -1,11 +1,6 @@
 package com.gestion.paciente.gestionpaciente.controllers;
 
 import java.util.List;
-import java.util.Optional;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,64 +9,62 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.gestion.paciente.gestionpaciente.dto.DoctoresDto;
 import com.gestion.paciente.gestionpaciente.entidades.Doctores;
+import com.gestion.paciente.gestionpaciente.entidades.Especialidades;
 import com.gestion.paciente.gestionpaciente.services.DoctoresServicio;
+import com.gestion.paciente.gestionpaciente.services.EspecialidadServicioIn;
 
 
+@RequestMapping("/doctores")
 @CrossOrigin(origins = {"http://localhost:4200"})
 @RestController
-@RequestMapping("/Doctores")
 public class DoctoresController {
 
-     @Autowired
-     private final DoctoresServicio doctoresServicio;
+    private final DoctoresServicio doctoresServicio;
+    private final EspecialidadServicioIn especialidadServicioIn;
 
-     public DoctoresController(DoctoresServicio doctoresServicio){
+    public DoctoresController(DoctoresServicio doctoresServicio, EspecialidadServicioIn especialidadServicioIn) {
         this.doctoresServicio = doctoresServicio;
-     }
-
-
-     @GetMapping("/doctores")
-     public List<Doctores> getList(){
-        return doctoresServicio.getAll();
-     }
-
-
-
-     @GetMapping("/{id}")
-     public ResponseEntity<Doctores> getDoctoresById(@PathVariable Long idDoctores){
-        Optional<Doctores> docto = doctoresServicio.getDoctoresById(idDoctores);
-        return docto.map(value -> new ResponseEntity<>(value, HttpStatus.OK)).orElseGet(() -> new ResponseEntity<>(HttpStatus.NOT_FOUND));
-     }
-
-
-     @PostMapping("/add")
-    public ResponseEntity<Doctores> createDoctores(@RequestBody DoctoresDto doctoresDto) {
-        Doctores doctores = doctoresServicio.saveDoctor(doctoresDto);
-        return ResponseEntity.ok(doctores);
+        this.especialidadServicioIn = especialidadServicioIn;
     }
-
-    @PutMapping("/doctores/{idDoctores}")
-    public ResponseEntity<Doctores> updateDoctores(@PathVariable Long idDoctores, @RequestBody DoctoresDto doctoresDto) {
-        Doctores updatedDoctores = doctoresServicio.updateDoctores(idDoctores, doctoresDto);
-        return ResponseEntity.ok(updatedDoctores);
+    
+    @PostMapping("/create")
+    public Doctores save(@RequestBody Doctores doctores) {
+        return doctoresServicio.save(doctores);
     }
-
-    @DeleteMapping("/doctores/{idDoctores}")
-    public ResponseEntity<Void> deleteDoctores(@PathVariable Long idDoctores) {
-        doctoresServicio.deleteDoctores(idDoctores);
-        return ResponseEntity.noContent().build();
+    
+    @GetMapping("")
+    public List<Doctores> findAll(){
+        return doctoresServicio.findAll();
     }
-
-    @GetMapping("/search")
-    public ResponseEntity<List<Doctores>> findDoctoresByName(@RequestParam String nombreMedico) {
-        List<Doctores> doctores = doctoresServicio.findDoctoresByName(nombreMedico);
-        return ResponseEntity.ok(doctores);
+    
+    @GetMapping("/{idDoctor}")
+    public Doctores findById(@PathVariable("idDoctor") Long idDoctor) {
+        return doctoresServicio.findById(idDoctor);
     }
+    
+    @DeleteMapping("/{idDoctor}")
+    public void deleteById(@PathVariable("idDoctor") Long idDoctor) {
+        doctoresServicio.deleteById(idDoctor);
+    }
+    
+    @PutMapping
+    public Doctores update(@RequestBody Doctores doctores) {
+        Doctores doctorDB = doctoresServicio.findById(doctores.getIdDoctores());
+        doctorDB.setNombreMedico(doctores.getNombreMedico());
+        
+        if (doctores.getIdEspecialidades() != null) {
+            Especialidades especialidades = especialidadServicioIn.findById(doctores.getIdEspecialidades().getIdEspecialidad());
+            doctorDB.setIdEspecialidades(especialidades);
+        }
+        doctorDB.setLicenciaMedica(doctores.getLicenciaMedica());
+        doctorDB.setCargo(doctores.getCargo());
+        doctorDB.setTurno(doctores.getTurno());
 
-
+        
+        
+        return doctoresServicio.update(doctorDB);
+    }
 }
